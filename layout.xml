@@ -28,6 +28,5 @@
       <button icon="arrowright" onTap="moveRight" />
       <button icon="playpause" onTap="enter" />
     </row>
-
   </grid>
 </layout>

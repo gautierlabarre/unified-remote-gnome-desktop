@@ -1,11 +1,24 @@
 local kb = libs.keyboard;
 
+local areAppsShown = false;
+
+
+function showAppsOrWindow (appsShown)
+	if(appsShown == false) then
+		kb.stroke("super", "a");
+		areAppsShown = true;
+		return areAppsShown;
+	end
+
+	kb.stroke("super", "s");
+	areAppsShown = false;
+
+end
 -- Documentation
 -- http://www.unifiedremote.com/api
 
 -- Keyboard Library
 -- http://www.unifiedremote.com/api/libs/keyboard
-
 
 --@help First line : Move window from screen to screen   UNTESTED
 actions.moveScreenLeft = function ()
@@ -22,7 +35,7 @@ actions.showWindows = function ()
 end
 
 actions.showApps = function () --Fixme : Boolean to launch showWindows when showApps is displayed 
-	kb.stroke("super", "a");
+	showAppsOrWindow(areAppsShown);
 end
 
 --@help First line : Move window from screen to screen
