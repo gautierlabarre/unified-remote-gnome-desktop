@@ -1,8 +1,15 @@
 local kb = libs.keyboard;
 
 local areAppsShown = false;
+local areOptionsShown = false;
 
+-- Documentation
+-- http://www.unifiedremote.com/api
 
+-- Keyboard Library
+-- http://www.unifiedremote.com/api/libs/keyboard
+
+-- @help Change how the button interact, first it shows apps, then it goes back to your app instead of all windows
 function showAppsOrWindow (appsShown)
 	if(appsShown == false) then
 		kb.stroke("super", "a");
@@ -12,13 +19,24 @@ function showAppsOrWindow (appsShown)
 
 	kb.stroke("super", "s");
 	areAppsShown = false;
-
 end
--- Documentation
--- http://www.unifiedremote.com/api
 
--- Keyboard Library
--- http://www.unifiedremote.com/api/libs/keyboard
+--@help Show/Hide buttons to interact with the menu from options. Also close the menu if toggled.
+function showOptions(optionsShown)
+	if(optionsShown == false) then
+		kb.stroke("alt", "space");
+		layout.gridArrows.visibility = "visible";
+		areOptionsShown = true;
+		return true;
+	end
+
+	if(optionsShown == true) then
+		kb.stroke("esc");
+		layout.gridArrows.visibility = "gone";
+		areOptionsShown = false
+		return true;
+	end
+end
 
 --@help First line : Move window from screen to screen   UNTESTED
 actions.moveScreenLeft = function ()
@@ -29,16 +47,16 @@ actions.moveScreenRight = function ()
 	kb.stroke("shift", "super", "right");
 end
 
---@help First line : Move window from screen to screen
+--@help Second line : Show all active windows / Show all apps
 actions.showWindows = function ()
 	kb.stroke("super", "S");
 end
 
-actions.showApps = function () --Fixme : Boolean to launch showWindows when showApps is displayed 
+actions.showApps = function () 
 	showAppsOrWindow(areAppsShown);
 end
 
---@help First line : Move window from screen to screen
+--@help Third line : Move window (with cursor) / Set window to fullscreen
 actions.moveWindow = function ()
 	kb.stroke("alt", "F7");
 end
@@ -47,9 +65,9 @@ actions.fullscreen = function ()
 	kb.stroke("f11");
 end
 
---@help First line : Move window from screen to screen
+--@help Fourth line : Option menu (and all arrow when button clicked) / Close window
 actions.options = function ()
-	kb.stroke("alt", "space");
+	showOptions(areOptionsShown)
 end
 
 actions.close = function ()
@@ -57,7 +75,6 @@ actions.close = function ()
 end
 
 
---@help First line : Move window from screen to screen
 actions.moveUp = function ()
 	kb.stroke("up");
 end
