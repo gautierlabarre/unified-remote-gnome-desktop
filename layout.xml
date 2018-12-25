@@ -2,23 +2,23 @@
 <layout>
 	<grid>
     <row color="blue">
-      <button text="Move left screen" onTap="moveScreenLeft" />
-      <button text="Move right screen" onTap="moveScreenRight" />
+      <button icon="left" onTap="moveScreenLeft" />
+      <button icon="right" onTap="moveScreenRight" />
     </row>
 
     <row color="blue">
-      <button text="All windows" onTap="showWindows" />
-      <button text="All apps" onTap="showApps" />
+      <button image="icon-windows.png" onTap="showWindows" scale="native" />
+      <button image="icon-apps.png" onTap="showApps" scale="native" />
     </row>
 
     <row color="blue">
-      <button text="Move window (with mouse)" onTap="moveWindow" />
-      <button text="Fullscreen" onTap="fullscreen" />
+      <button image="icon-move.png" onTap="moveWindow"  scale="native" />
+      <button icon="fullscreen" onTap="fullscreen" />
     </row>
 
     <row>
-      <button text="Options" onTap="options"/>
-      <button text="Close" onTap="close" color="red" />
+      <button icon="config" onTap="options"/>
+      <button icon="docclose" onTap="close" color="red" />
     </row>
 
     <row color="yellow">
