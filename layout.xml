@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<grid>
+    <row color="blue">
+      <button text="Move left screen" onTap="moveScreenLeft" />
+      <button text="Move right screen" onTap="moveScreenRight" />
+    </row>
+
+    <row color="blue">
+      <button text="All windows" onTap="showWindows" />
+      <button text="All apps" onTap="showApps" />
+    </row>
+
+    <row color="blue">
+      <button text="Move window (with mouse)" onTap="moveWindow" />
+      <button text="Fullscreen" onTap="fullscreen" />
+    </row>
+
+    <row>
+      <button text="Options" onTap="options"/>
+      <button text="Close" onTap="close" color="red" />
+    </row>
+
+    <row color="yellow">
+      <button icon="arrowup" onTap="moveUp"/>
+      <button icon="arrowdown" onTap="moveDown" />
+      <button icon="arrowleft" onTap="moveLeft"/>
+      <button icon="arrowright" onTap="moveRight" />
+      <button icon="playpause" onTap="enter" />
+    </row>
+
+  </grid>
+</layout>

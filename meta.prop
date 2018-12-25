@@ -1,0 +1,4 @@
+meta.name: GNOME desktop
+meta.author: Gautier LABARRE
+meta.description: Simple remote to handle some Gnome desktop shortcuts.
+meta.tags.category: utility
