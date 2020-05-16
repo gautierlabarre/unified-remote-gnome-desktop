@@ -1,3 +1,6 @@
+-- Gnome Desktop unified remote
+-- @author Gautier LABARRE
+
 local kb = libs.keyboard;
 
 local areAppsShown = false;
