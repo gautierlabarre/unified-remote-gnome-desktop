@@ -1,15 +1,9 @@
 local kb = libs.keyboard;
 
-local areAppsShown = false;
-local areOptionsShown = false;
+local areAppsShown 		= false;
+local areOptionsShown 	= false;
 
--- Documentation
--- http://www.unifiedremote.com/api
-
--- Keyboard Library
--- http://www.unifiedremote.com/api/libs/keyboard
-
--- @help Change how the button interact, first it shows apps, then it goes back to your app instead of all windows
+-- @help Show/Hide app list
 function showAppsOrWindow (appsShown)
 	if(appsShown == false) then
 		kb.stroke("super", "a");
@@ -38,7 +32,7 @@ function showOptions(optionsShown)
 	end
 end
 
---@help First line : Move window from screen to screen   UNTESTED
+--@help First line : Move window from screen to screen
 actions.moveScreenLeft = function ()
 	kb.stroke("shift", "super", "left");
 end
